@@ -1,0 +1,176 @@
+<script type="text/javascript">
+//$(document).ready(function() {
+//	$("form").submit(function(e) {
+//		if ($("#terms:not(:checked)").length > 0) {
+//			e.preventDefault();
+//			alert('You must agree the the Terms of Use before posting this job.');
+//			return false;
+//		}
+//	});
+//});
+
+// $(document).ready(function() { 
+// 	$("#new_job").validate({ 
+// 		rules: { 
+// 			title: "required",
+// 			location: "required",
+// 			job_description: "required",
+// 			apply: "required",
+// 			company: "required",
+// 			terms: "required"
+// 		},	 
+// 		messages: { 
+// 			title: "Please enter a Job Title." 
+// 		} 
+// 	}); 
+// });
+</script>
+
+<div class="content">
+	<h1>Post a job for free</h1>
+	<p>Yes, that's right, for free!</p>
+	<p>This site caters to the technology/web/software/design industries, and is open to all job 
+	postings anywhere. Just fill out the form to post a job, and BAM! You're good 
+	to go. Jobs remain listed for up to 3 months, after which they will be deleted 
+	from our system automatically.</p>
+
+	<%= form_for Job.new, url: '/post', :html => {:class => "standard"} do |f| %>
+		<h3>Job Details</h3>
+
+		<div class="form-group">
+		<%= f.label :job_title %>
+		<%= f.text_field :job_title %>
+		</div>
+		
+		<div class="form-group">
+		<span>ex. "Los Angeles, CA"</span>
+		<%= f.label :job_location %>
+		<%= f.text_field :job_location %>
+		</div>
+
+		<div class="form-group">
+		<%= f.label :job_description %>
+		<%= f.text_area :job_description %>
+		</div>
+
+		<div class="form-group">
+		<%= f.label :job_responsibilities %>
+		<%= f.text_area :job_responsibilities %>
+		</div>
+
+		<div class="form-group">
+		<%= f.label :job_requirements %>
+		<%= f.text_area :job_requirements %>
+		</div>
+
+		<div class="form-group">
+		<%= f.label :specialties %>
+		<%= f.select(:specialties, [
+			'3D Modeling',
+			'Account Management',
+			'Administrative &amp; Support',
+			'Advertising',
+			'Animation',
+			'Architecture',
+			'Art Direction',
+			'Branding &amp; Corporate Identity',
+			'Business Development &amp; Sales',
+			'Character Design',
+			'Concept Art',
+			'Content Strategy',
+			'Copywriting &amp; Editing',
+			'Creative Direction',
+			'Design Management',
+			'Education',
+			'Engineering',
+			'Environmental Graphics',
+			'Event Design',
+			'Exhibit Design',
+			'Fashion/Apparel',
+			'Footwear',
+			'Furniture',
+			'Game Design',
+			'Graphic Design',
+			'Illustration',
+			'Industrial Design',
+			'Information Architecture',
+			'Interaction Design',
+			'Interior Design',
+			'Landscape Architecture',
+			'Marketing',
+			'Mobile App. Development',
+			'Model Making &amp; Prototyping',
+			'Motion Graphics',
+			'Non-Profit',
+			'Packaging',
+			'Photography',
+			'Point of Purchase',
+			'Product Design',
+			'Project Management',
+			'Public Relations',
+			'Publishing',
+			'Research',
+			'Service Design',
+			'Set Design',
+			'Social Media',
+			'Strategy &amp; Planning',
+			'Sustainability',
+			'Textile Design',
+			'Toy Design',
+			'Transportation',
+			'Typography',
+			'Urban Planning',
+			'User Experience',
+			'Visual Design',
+			'Web Design',
+			'Web Development'
+		]) %>
+		</div>
+
+		<div class="form-group">
+		<%= f.label :job_level %>
+		<%= f.select(:job_level, [
+			'Intern',
+			'Freelance',
+			'Junior Staff',
+			'Mid-Level Staff',
+			'Senior Staff',
+			'Executive'
+		]) %>
+		</div>
+
+		<h3>How to apply</h3>
+		<div class="form-group">
+			<span>ex. "jobs@companyname.com" or "www.companyname.com/careers"</span>
+			<%= f.label :email_or_website %>
+			<%= f.text_field :how_to_apply %>
+		</div>
+
+		<h3>Employer Information</h3>
+		<div class="form-group">
+			<%= f.label :company %>
+			<%= f.text_field :company %>
+		</div>
+
+		<div class="form-group">
+			<%= f.label :company_description %>
+			<%= f.text_area :company_description %>
+		</div>
+
+		<div class="form-group">
+			<span>ex. "www.companyname.com"</span>
+			<%= f.label :company_website %>
+			<%= f.text_field :company_website %>
+		</div>
+
+		<div class="checkbox">
+			<label>
+				<%= f.check_box :agree, :id => 'terms' %> I agree to the <a href="/legal" target="_blank">Terms of Use</a>
+			</label>
+			<%= f.submit "Post Job", :class => 'btn btn-default right' %>
+		</div>
+	<% end %>
+	<div style="clear:both;">&nbsp;</div>
+	<br /><br /><br />
+</div>
+

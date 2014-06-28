@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Fistful of Skills</title>
+	<%= favicon_link_tag 'favicon.ico' %>
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+	<link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Waiting+for+the+Sunrise' rel='stylesheet' type='text/css'>
+	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+	<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.12.0/jquery.validate.min.js"></script>
+	<%= csrf_meta_tags %>
+</head>
+<body>
+
+<div class="sidebar">
+	<nav>
+		<a href="/" class="logo"><span>Fistful of Skills</span></a>
+		<a href="/"><i class="glyphicon glyphicon-home"></i> &nbsp; Home</a>
+		<a href="/jobs"><i class="glyphicon glyphicon-eye-open"></i> &nbsp; Browse jobs</a>
+		<a href="/post"><i class="glyphicon glyphicon-bullhorn"></i> &nbsp; Post a job</a>
+		<a href="/contact"><i class="glyphicon glyphicon-envelope"></i> &nbsp; Contact</a>
+		<a href="/legal"><i class="glyphicon glyphicon-ok"></i> &nbsp; Terms</a>
+	</nav>
+	<span>&copy; Copyright 2014.<br /> All rights reserved.</span>
+</div>
+
+<div class="main">
+	<%= yield %>
+</div>
+
+</body>
+</html>

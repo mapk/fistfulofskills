@@ -1,0 +1,26 @@
+<div class="content">
+
+<% if @job == '' %>
+
+	<h3>No jobs are posted</h3>
+	<p>There are no jobs in our database currently. Go ahead and post one today - it's free.</p>
+	<p><a href="/post" class="btn btn-default">Post a Job</a></p>
+
+<% else %>
+
+	<h1>Browse for jobs</h1>
+	<p>This list contains job postings up to 3 months old. Click on a job to view the details and how to apply.</p>
+
+	<div class="list">
+		<% @jobs.reverse_each do |job| %>
+		<a href="/jobs/<%= job.id %>">
+			<i class="glyphicon glyphicon-chevron-right"></i>
+			<h3><%= job.job_title %></h3>
+			<p><span><%= job.company.upcase %></span> in <%= job.job_location %></p>
+		</a>
+		<% end %>
+	</div>
+
+<% end %>
+
+</div>
