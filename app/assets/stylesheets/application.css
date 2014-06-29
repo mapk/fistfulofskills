@@ -19,7 +19,7 @@ body { background:#f7f7f7; font-family: 'Roboto', sans-serif; min-height:100%; p
 .sidebar { width:200px; height:100%; position:fixed; left:0; top:0; z-index:10; background:#FFF; border-right:1px solid #efefef; }
 .sidebar > span { font-size:12px; color:#DDD; padding:20px; display:block; }
 .main { padding-left:200px; height:100%; position:relative; }
-.logo, .logo:hover { background:transparent url('fist.png') no-repeat center 0; background-size:48px auto; display:block; text-align:center; }
+.logo, .logo:hover { background:transparent url(fist.png) no-repeat center 0; background-size:48px auto; display:block; text-align:center; }
 nav { width:100%; margin-top:40px; }
 nav a { display:block; padding:15px; font-size:14px; color:#999; border-bottom:1px solid #f7f7f7; -webkit-transition:all .1s ease-in-out; -moz-transition:all .1s ease-in-out; transition:all .1s ease-in-out; }
 nav a:hover { text-decoration:none; color:#000; background:#f7f7f7; }
