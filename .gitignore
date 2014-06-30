@@ -16,4 +16,4 @@
 /tmp
 
 # Ignore profile image uploads
-/public/system/profiles
+/public/system/jobs/*
