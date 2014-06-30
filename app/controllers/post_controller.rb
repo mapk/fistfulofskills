@@ -15,6 +15,7 @@ class PostController < ApplicationController
 		job.company = params[:job][:company]
 		job.company_description = params[:job][:company_description]
 		job.company_website = params[:job][:company_website]
+		job.photo = params[:job][:photo]
 		job.save!
 		redirect_to '/jobs'
 	end
