@@ -23,13 +23,13 @@ class Job
 	field :agree, type: Boolean
 
 
-	GENERIC_PROFILE_PHOTO = '/images/generic-profile-pic.png'
+	GENERIC_PHOTO = '/images/missing.png'
 
 	def show_photo
 		if photo_file_size
 			photo
 		else
-			GENERIC_PROFILE_PHOTO
+			GENERIC_PHOTO
 		end
 	end
 

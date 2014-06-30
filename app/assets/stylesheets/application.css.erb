@@ -31,7 +31,7 @@ p { font-size:1.2em; }
 a, a:visited, a:focus, a:hover { color:#0bbed1; text-decoration:none; }
 
 aside { position:fixed; right:2em; top:40px; width:400px; }
-.detail aside h3 { border-top:none; }
+.detail aside h3 { border-top:none; margin-top:0; padding-top:0; }
 aside p { font-size:14px; }
 
 .btn-default { border:none; padding:.7em 1.2em; background:#0ACC8C; text-shadow:none; color:#FFF !important; }
@@ -100,7 +100,10 @@ form.standard h3 { margin:2em 0 0; padding:20px 0; border-top:1px solid #efefef;
 .list a:hover i { right:-40px; color:#eaeaea; }
 
 
-
+/* Contain floats: h5bp.com/q */
+.clearfix:before, .clearfix:after { content: ""; display: table; }
+.clearfix:after { clear: both; }
+.clearfix { *zoom: 1; }
 
 
 

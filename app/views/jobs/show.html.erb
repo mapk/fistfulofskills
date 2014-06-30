@@ -26,11 +26,16 @@
 	<p><%= @job.how_to_apply %></p>
 
 	<aside>
-		<h3><%= @job.company %></h3>
-		<h4><a href="http://<%= @job.company_website %>" target="_blank"><%= @job.company_website %></a></h4>
+		<div class="clearfix" style="margin-top:80px;">
+			<% if @job.photo.present? %>
+				<%= image_tag src=@job.photo, size: "70x70", style: "float:left; margin:0 10px 10px 0; vertical-align:top;" %>
+			<% else %>
+			<% end %>
+			<h3><%= @job.company %></h3>
+			<h4><a href="http://<%= @job.company_website %>" target="_blank"><%= @job.company_website %></a></h4>
+		</div>
+		
 		<p><%= @job.company_description %></p>
-		<%= image_tag src=@job.photo, size: "100x100" %>
-
 	</aside>
 
 <br /><br /><br />
