@@ -29,6 +29,8 @@
 		<h3><%= @job.company %></h3>
 		<h4><a href="http://<%= @job.company_website %>" target="_blank"><%= @job.company_website %></a></h4>
 		<p><%= @job.company_description %></p>
+		<%= image_tag @job.photo, size: "100x100" %>
+
 	</aside>
 
 <br /><br /><br />
