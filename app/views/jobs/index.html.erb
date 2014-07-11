@@ -8,6 +8,11 @@
 	<div class="list">
 		<% @jobs.reverse_each do |job| %>
 		<a href="/jobs/<%= job.id %>">
+			<% if job.photo.present? %>
+				<%= image_tag src=job.photo, class: "img-float" %>
+			<% else %>
+				<div class="img-float missing"></div>
+			<% end %>
 			<i class="glyphicon glyphicon-chevron-right"></i>
 			<h3><%= job.job_title %></h3>
 			<p><span><%= job.company.upcase %></span> in <%= job.job_location %></p>

@@ -87,6 +87,9 @@ form.standard h3 { margin:2em 0 0; padding:20px 0; border-top:1px solid #efefef;
 .joblist li { display:block; width:100%; padding:15px 0 20px; border-bottom:1px solid #efefef; }
 .shorten { width:100%; height:50px; overflow:hidden; text-overflow:ellipsis; }
 
+.img-float { float:left; margin:0 20px 10px 0; width:70px; height:70px; }
+.missing { background:transparent url('<%= asset_path("missing.png") %>') no-repeat center 0; background-size:70px 70px; }
+
 .list a { display:block; padding:10px 0 15px; width:100%; border-bottom:1px solid #efefef; border-radius:2px; position:relative; 
 	-webkit-transition:border-left .2s ease-in-out;
 	-moz-transition:border-left .2s ease-in-out;
@@ -95,9 +98,12 @@ form.standard h3 { margin:2em 0 0; padding:20px 0; border-top:1px solid #efefef;
 .list a h3 { color:#555; }
 .list a p { color:#858585; }
 .list a i { font-size:48px; color:#efefef; position:absolute; top:32px; right:0; }
-.list a:hover { margin-left:-40px; text-indent:37px; border-left:3px solid #0bbed1; }
+.list a:hover { margin-left:-40px; border-left:3px solid #0bbed1; }
 .list a:hover h3, .list a:hover p { color:#000; }
 .list a:hover i { right:-40px; color:#eaeaea; }
+.list a .img-float { margin-top:15px; }
+.list a:hover .img-float { margin-left:37px; }
+
 
 
 /* Contain floats: h5bp.com/q */

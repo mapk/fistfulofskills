@@ -163,8 +163,11 @@
 			<%= f.text_field :company_website %>
 		</div>
 
-		<%= f.file_field :photo %>
-
+		<div class="form-group">
+			<span>Logos should be 70x70 pixels and in jpg or png format.</span>
+			<%= f.label :Upload_a_company_logo %>
+			<%= f.file_field :photo %>
+		</div>
 
 		<div class="checkbox">
 			<label>
