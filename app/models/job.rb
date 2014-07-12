@@ -22,6 +22,7 @@ class Job
 
 	field :agree, type: Boolean
 
+	#validates :job_title, presence: true
 
 	GENERIC_PHOTO = '/images/missing.png'
 

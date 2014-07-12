@@ -1,0 +1,60 @@
+<div class="content detail">
+	
+	<h1><%= @job.job_title %></h1>
+
+	<p><i class="glyphicon glyphicon-map-marker"></i> &nbsp; <%= @job.job_location %></p>
+
+	<h3>Job Description</h3>
+	<p><%= @job.job_description %></p>
+
+<% if @job.job_responsibilities != '' %>
+	<h3>Job Responsibilities</h3>
+	<p><%= @job.job_responsibilities %></p>
+<% end %>
+
+<% if @job.job_responsibilities != '' %>
+	<h3>Job Requirements</h3>
+	<p><%= @job.job_requirements %></p>	
+<% end %>
+
+	<h3>Specialties</h3>
+	<p><%= @job.specialties %></p>
+	
+	<h3>Job Level</h3>
+	<p><%= @job.job_level %></p>
+	
+	<h3 class="bright">How to Apply</h3>
+	<p><%= @job.how_to_apply %></p>
+	
+	<aside>
+		<div class="clearfix" style="margin-top:80px;">
+			<% if @job.photo.present? %>
+				<%= image_tag src=@job.photo, class: "img-float" %>
+			<% else %>
+				<div class="img-float missing"></div>
+			<% end %>
+			<h3><%= @job.company %></h3>
+			<h4><a href="http://<%= @job.company_website %>" target="_blank"><%= @job.company_website %></a></h4>
+		</div>
+		<p><%= @job.company_description %></p>
+	</aside>
+
+
+<%= form_for @job, url: '/post' do |f| %>
+	<%= f.hidden_field :job_title %>
+	<%= f.hidden_field :job_description %>
+	<%= f.hidden_field :job_responsibilities %>
+	<%= f.hidden_field :job_requirements %>
+	<%= f.hidden_field :specialties %>
+	<%= f.hidden_field :job_level %>
+	<%= f.hidden_field :how_to_apply %>
+	<%= f.hidden_field :company %>
+	<%= f.hidden_field :company_website %>
+	<%= f.hidden_field :company_description %>
+	<%= f.hidden_field :photo %>
+
+	<%= f.submit "Post Job", :class => 'btn btn-default right' %>
+<% end %>
+<br /><br /><br />
+
+</div>

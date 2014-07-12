@@ -45,3 +45,5 @@ gem 'rails_12factor', group: :production
 gem 'mongoid-paperclip', require: 'mongoid_paperclip'
 
 gem 'newrelic_rpm'
+
+gem 'pry'
