@@ -27,8 +27,8 @@
 
 	<aside>
 		<div class="clearfix" style="margin-top:80px;">
-			<% if @job.photo.present? %>
-				<%= image_tag src=@job.photo, class: "img-float" %>
+			<% if @job.avatar.present? %>
+				<%= image_tag src=@job.avatar, class: "img-float" %>
 			<% else %>
 				<div class="img-float missing"></div>
 			<% end %>

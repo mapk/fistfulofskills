@@ -1,7 +1,6 @@
 class Job
 	include Mongoid::Document
-	include Mongoid::Paperclip
-
+	mount_uploader :avatar, AvatarUploader
 
 	field :job_title, type: String
 	field :job_location, type: String
@@ -17,8 +16,8 @@ class Job
 	field :company_description, type: String
 	field :company_website, type: String
 
-	has_mongoid_attached_file :photo
-	validates_attachment_content_type :photo, :content_type=>['image/jpeg', 'image/png']
+	
+	
 
 	field :agree, type: Boolean
 

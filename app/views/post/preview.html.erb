@@ -1,5 +1,27 @@
+<div class="preview clearfix">
+		<%= form_for @job, url: '/post', multipart: true do |f| %>
+		<%= f.hidden_field :job_title %>
+		<%= f.hidden_field :job_description %>
+		<%= f.hidden_field :job_responsibilities %>
+		<%= f.hidden_field :job_requirements %>
+		<%= f.hidden_field :specialties %>
+		<%= f.hidden_field :job_level %>
+		<%= f.hidden_field :how_to_apply %>
+		<%= f.hidden_field :company %>
+		<%= f.hidden_field :company_website %>
+		<%= f.hidden_field :company_description %>
+		<%= f.hidden_field :avatar_cache %>
+
+		<span><i class="glyphicon glyphicon-exclamation-sign"></i> Review your job post! If approved, submit it, or cancel and try again.</span>
+		
+		<%= f.submit "Post Job", :class => 'btn btn-default btn-sm' %>
+		<a href="/post" class="btn" style="margin-top:3px;">Cancel</a>
+
+		<% end %>
+	</div>
 <div class="content detail">
 	
+
 	<h1><%= @job.job_title %></h1>
 
 	<p><i class="glyphicon glyphicon-map-marker"></i> &nbsp; <%= @job.job_location %></p>
@@ -28,8 +50,8 @@
 	
 	<aside>
 		<div class="clearfix" style="margin-top:80px;">
-			<% if @job.photo.present? %>
-				<%= image_tag src=@job.photo, class: "img-float" %>
+			<% if @job.avatar.present? %>
+				<%= image_tag src=@job.avatar, class: "img-float" %>
 			<% else %>
 				<div class="img-float missing"></div>
 			<% end %>
@@ -39,22 +61,6 @@
 		<p><%= @job.company_description %></p>
 	</aside>
 
-
-<%= form_for @job, url: '/post' do |f| %>
-	<%= f.hidden_field :job_title %>
-	<%= f.hidden_field :job_description %>
-	<%= f.hidden_field :job_responsibilities %>
-	<%= f.hidden_field :job_requirements %>
-	<%= f.hidden_field :specialties %>
-	<%= f.hidden_field :job_level %>
-	<%= f.hidden_field :how_to_apply %>
-	<%= f.hidden_field :company %>
-	<%= f.hidden_field :company_website %>
-	<%= f.hidden_field :company_description %>
-	<%= f.hidden_field :photo %>
-
-	<%= f.submit "Post Job", :class => 'btn btn-default right' %>
-<% end %>
 <br /><br /><br />
 
 </div>

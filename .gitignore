@@ -17,3 +17,4 @@
 
 # Ignore profile image uploads
 /public/system/jobs/*
+/public/uploads/*

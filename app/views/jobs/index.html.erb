@@ -8,8 +8,8 @@
 	<div class="list">
 		<% @jobs.reverse_each do |job| %>
 		<a href="/jobs/<%= job.id %>">
-			<% if job.photo.present? %>
-				<%= image_tag src=job.photo, class: "img-float" %>
+			<% if job.avatar.present? %>
+				<%= image_tag src=job.avatar_url, class: "img-float" %>
 			<% else %>
 				<div class="img-float missing"></div>
 			<% end %>

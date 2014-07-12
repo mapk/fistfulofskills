@@ -166,7 +166,8 @@
 		<div class="form-group">
 			<span>Logos should be 70x70 pixels and in jpg or png format.</span>
 			<%= f.label :Upload_a_company_logo %>
-			<%= f.file_field :photo %>
+			<%= f.file_field :avatar %>
+			<%= f.hidden_field :avatar_cache %>
 		</div>
 
 		<div class="checkbox">
