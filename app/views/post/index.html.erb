@@ -1,29 +1,16 @@
 <script type="text/javascript">
-//$(document).ready(function() {
-//	$("form").submit(function(e) {
-//		if ($("#terms:not(:checked)").length > 0) {
-//			e.preventDefault();
-//			alert('You must agree the the Terms of Use before posting this job.');
-//			return false;
-//		}
-//	});
-//});
 
-// $(document).ready(function() { 
-// 	$("#new_job").validate({ 
-// 		rules: { 
-// 			title: "required",
-// 			location: "required",
-// 			job_description: "required",
-// 			apply: "required",
-// 			company: "required",
-// 			terms: "required"
-// 		},	 
-// 		messages: { 
-// 			title: "Please enter a Job Title." 
-// 		} 
-// 	}); 
-// });
+$.validator.setDefaults({
+		submitHandler: function() {
+			alert("submitted!");
+		}
+	});
+
+	$().ready(function() {
+		// validate the form when it is submitted
+		$("#new_job").validate();
+	})
+});
 </script>
 
 <div class="content">
@@ -33,24 +20,25 @@
 	postings anywhere. Just fill out the form to post a job, and BAM! You're good 
 	to go. Jobs remain listed for up to 3 months, after which they will be deleted 
 	from our system automatically.</p>
+	<p><span class="required">*</span> Indicates required fields.</p>
 
 	<%= form_for Job.new, url: '/post/preview', :html => {:class => "standard"} do |f| %>
 		<h3>Job Details</h3>
 
 		<div class="form-group">
-		<%= f.label :job_title %>
-		<%= f.text_field :job_title %>
+		<span class="required">*</span><%= f.label :job_title %>
+		<%= f.text_field :job_title, required: true %>
 		</div>
 		
 		<div class="form-group">
 		<span>ex. "Los Angeles, CA"</span>
-		<%= f.label :job_location %>
-		<%= f.text_field :job_location %>
+		<span class="required">*</span><%= f.label :job_location %>
+		<%= f.text_field :job_location, required: true %>
 		</div>
 
 		<div class="form-group">
-		<%= f.label :job_description %>
-		<%= f.text_area :job_description %>
+		<span class="required">*</span><%= f.label :job_description %>
+		<%= f.text_area :job_description, required: true %>
 		</div>
 
 		<div class="form-group">
@@ -142,19 +130,19 @@
 		<h3>How to apply</h3>
 		<div class="form-group">
 			<span>ex. "jobs@companyname.com" or "www.companyname.com/careers"</span>
-			<%= f.label :email_or_website %>
-			<%= f.text_field :how_to_apply %>
+			<span class="required">*</span><%= f.label :email_or_website %>
+			<%= f.text_field :how_to_apply, required: true %>
 		</div>
 
 		<h3>Employer Information</h3>
 		<div class="form-group">
-			<%= f.label :company %>
-			<%= f.text_field :company %>
+			<span class="required">*</span><%= f.label :company %>
+			<%= f.text_field :company, required: true %>
 		</div>
 
 		<div class="form-group">
-			<%= f.label :company_description %>
-			<%= f.text_area :company_description %>
+			<span class="required">*</span><%= f.label :company_description %>
+			<%= f.text_area :company_description, required: true %>
 		</div>
 
 		<div class="form-group">
@@ -172,7 +160,7 @@
 
 		<div class="checkbox">
 			<label>
-				<%= f.check_box :agree, :id => 'terms' %> I agree to the <a href="/legal" target="_blank">Terms of Use</a>
+				<span class="required">*</span><%= f.check_box :agree, :id => 'terms', required: true %> I agree to the <a href="/legal" target="_blank">Terms of Use</a>
 			</label>
 			<%= f.submit "Post Job", :class => 'btn btn-default right' %>
 		</div>

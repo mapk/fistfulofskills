@@ -16,21 +16,6 @@ class Job
 	field :company_description, type: String
 	field :company_website, type: String
 
-	
-	
-
 	field :agree, type: Boolean
-
-	#validates :job_title, presence: true
-
-	GENERIC_PHOTO = '/images/missing.png'
-
-	def show_photo
-		if photo_file_size
-			photo
-		else
-			GENERIC_PHOTO
-		end
-	end
 
 end
