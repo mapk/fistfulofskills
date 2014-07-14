@@ -19,6 +19,5 @@ Rails.application.routes.draw do
   #terms
   get '/legal' => 'legal#terms'
 
-  #carrierwave path
-  get '/tmp/uploads/job/avatar/:id/:filename' => 'gridfs#avatar'
+  
 end
