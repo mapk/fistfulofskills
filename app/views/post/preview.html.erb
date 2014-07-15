@@ -1,6 +1,7 @@
 <div class="preview clearfix">
 		<%= form_for @job, url: '/post', multipart: true do |f| %>
 		<%= f.hidden_field :job_title %>
+		<%= f.hidden_field :job_location %>
 		<%= f.hidden_field :job_description %>
 		<%= f.hidden_field :job_responsibilities %>
 		<%= f.hidden_field :job_requirements %>
