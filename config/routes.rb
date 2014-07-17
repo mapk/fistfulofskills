@@ -19,5 +19,11 @@ Rails.application.routes.draw do
   #terms
   get '/legal' => 'legal#terms'
 
+
+  resources :jobs do
+    get :avatar, on: :member
+  end
+
+  match '/uploads/job/avatar/:id/:filename' => 'gridfs#avatar', :via => [:get], :as => 'gridfs_avatar'
   
 end

@@ -37,5 +37,13 @@ class PostController < ApplicationController
 		redirect_to '/jobs'
 	end
 
+	def avatar
+		content = @job.avatar.read
+			if stale?(etag: content, last_modified: @job.updated_at.utc, public: true)
+			send_data content, type: @job.avatar.file.content_type, disposition: "inline"
+			expires_in 0, public: true
+		end
+	end
+
 	
 end
