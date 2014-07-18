@@ -3,15 +3,23 @@ Rails.application.routes.draw do
   
   #jobs
   get '/jobs' => 'jobs#index'
-  get '/jobs/:id' => 'jobs#show'
+  post '/jobs' => 'jobs#create'
   
-  #post
-  get '/post' => 'post#index'
-  post '/post' => 'post#create'
+  get '/jobs/new' => 'jobs#new'
 
-  get '/post/preview' => 'post#preview'
-  post '/post/preview' => 'post#preview'
+  get '/jobs/preview/:id' => 'jobs#preview'
 
+  get '/jobs/:id' => 'jobs#show'
+
+  patch '/jobs/publish/:id' => 'jobs#update'
+  
+
+  
+  
+
+
+  # To find all the routes
+  #resources :jobs
 
   #contact
   get '/contact' => 'contact#index'
@@ -24,6 +32,6 @@ Rails.application.routes.draw do
     get :avatar, on: :member
   end
 
-  match '/uploads/job/avatar/:id/:filename' => 'gridfs#avatar', :via => [:get], :as => 'gridfs_avatar'
+  get '/uploads/job/avatar/:id/:filename' => 'gridfs#avatar'
   
 end

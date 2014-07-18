@@ -18,4 +18,6 @@ class Job
 
 	field :agree, type: Boolean
 
+	field :publish, type: Boolean
+
 end

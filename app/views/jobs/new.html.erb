@@ -22,7 +22,7 @@ $.validator.setDefaults({
 	from our system automatically.</p>
 	<p><span class="required">*</span> Indicates required fields.</p>
 
-	<%= form_for Job.new, url: '/post', :html => {:class => "standard"} do |f| %>
+	<%= form_for Job.new, url: '/jobs', :html => {:class => "standard"} do |f| %>
 		<h3>Job Details</h3>
 
 		<div class="form-group">
@@ -162,7 +162,7 @@ $.validator.setDefaults({
 			<label>
 				<span class="required">*</span><%= f.check_box :agree, :id => 'terms', required: true %> I agree to the <a href="/legal" target="_blank">Terms of Use</a>
 			</label>
-			<%= f.submit "Post Job", :class => 'btn btn-default right' %>
+			<%= f.submit "Preview Job Post", :class => 'btn btn-default right' %>
 		</div>
 	<% end %>
 	<div style="clear:both;">&nbsp;</div>
