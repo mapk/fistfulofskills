@@ -1,5 +1,7 @@
 class Job
 	include Mongoid::Document
+	include Mongoid::Timestamps
+	
 	mount_uploader :avatar, AvatarUploader
 
 	field :job_title, type: String

@@ -1,6 +1,6 @@
 class JobsController < ApplicationController
 	def index
-		@jobs = Job.where(publish: true) #.where('published_at > ?', 3.months.ago)
+		@jobs = Job.where(publish: true).where(:created_at.gte => 3.months.ago)
 	end
 
 	def show
